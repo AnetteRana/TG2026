@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cus5a0amgmn8b"]
+
+[ext_resource type="Texture2D" uid="uid://dc5oiljf11ivp" path="res://sprite_images/sprites_diver_01.png" id="1_5pqwq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lwl4"]
+atlas = ExtResource("1_5pqwq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6tqw"]
+atlas = ExtResource("1_5pqwq")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lwl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6tqw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
