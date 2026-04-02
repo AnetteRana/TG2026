@@ -15,6 +15,7 @@ gravityScale = 13.0
 idle = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=431954961]
+texture_filter = 1
 sprite_frames = ExtResource("2_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=4055659]

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://boanplcevp636"]
+
+[ext_resource type="Texture2D" uid="uid://6anrn6xio644" path="res://sprite_images/bubble_sprites.png" id="1_3j047"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3j047"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 4
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_s24e4"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3j047"]
+gradient = SubResource("Gradient_s24e4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s24e4"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 1.0
+gravity = Vector3(0, -98, 0)
+color_ramp = SubResource("GradientTexture1D_3j047")
+anim_offset_max = 1.0
+
+[node name="my_GPUParticles2D" type="GPUParticles2D" unique_id=1439865621]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_3j047")
+emitting = false
+amount = 75
+texture = ExtResource("1_3j047")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_s24e4")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bsq3qk5c7le1v" path="res://sprite_images/oxygenTanks_sprites.png" id="1_2pp68"]
 [ext_resource type="Script" uid="uid://cfbvguanptwfx" path="res://scripts/oxygen_tank.gd" id="1_ab318"]
+[ext_resource type="PackedScene" uid="uid://boanplcevp636" path="res://scenes/particle_bubbles.tscn" id="3_aq14f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ab318"]
 size = Vector2(30, 64)
@@ -10,6 +11,7 @@ size = Vector2(30, 64)
 script = ExtResource("1_ab318")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=695280241]
+texture_filter = 1
 position = Vector2(0, -32)
 texture = ExtResource("1_2pp68")
 hframes = 2
@@ -20,5 +22,7 @@ vframes = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1661135311]
 position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_ab318")
+
+[node name="tanks_ParticleBubbles" parent="." unique_id=1272362648 instance=ExtResource("3_aq14f")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
