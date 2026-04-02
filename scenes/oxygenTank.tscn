@@ -24,5 +24,7 @@ position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_ab318")
 
 [node name="tanks_ParticleBubbles" parent="." unique_id=1272362648 instance=ExtResource("3_aq14f")]
+position = Vector2(15, -87)
+lifetime = 2.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

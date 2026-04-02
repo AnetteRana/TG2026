@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://8h40qs6xsq64"]
+
+[ext_resource type="Script" uid="uid://cadv6y8cnlrd1" path="res://scenes/my_ui.gd" id="1_lpdfc"]
+
+[node name="MyUi" type="Control" unique_id=1594898919]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lpdfc")
+
+[node name="Label" type="Label" parent="." unique_id=1129211333]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -11.5
+offset_right = 164.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "mhvhjgdxgfjcødfljg lfdhjg dkøjdfhg kdfsh g"

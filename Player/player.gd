@@ -184,6 +184,8 @@ func _ready():
 	anim = PlayerSprite
 	col = PlayerCollider
 	
+	GameManager.myPlayer = self
+	
 	add_to_group("player")
 	
 	_updateData()
@@ -665,3 +667,7 @@ func _endGroundPound():
 
 func _placeHolder():
 	print("")
+
+func bubbles():
+	print("bubbleOutSound!")
+	$my_GPUParticles2D.restart()

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://vtb2ng15tp10" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="SpriteFrames" uid="uid://c55bmo0axxw62" path="res://sprite_images/player_sprite_frames_2.tres" id="2_4ntmi"]
+[ext_resource type="PackedScene" uid="uid://8h40qs6xsq64" path="res://scenes/myUI.tscn" id="3_btcbx"]
+[ext_resource type="PackedScene" uid="uid://boanplcevp636" path="res://scenes/particle_bubbles.tscn" id="4_gwnis"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ntmi"]
 radius = 22.0
@@ -22,3 +24,10 @@ sprite_frames = ExtResource("2_4ntmi")
 shape = SubResource("CapsuleShape2D_4ntmi")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=641027885]
+
+[node name="MyUi" parent="Camera2D" unique_id=1594898919 instance=ExtResource("3_btcbx")]
+offset_top = -55.0
+offset_bottom = -55.0
+
+[node name="my_GPUParticles2D" parent="." unique_id=1439865621 instance=ExtResource("4_gwnis")]
+position = Vector2(9, -52)
