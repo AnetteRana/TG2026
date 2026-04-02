@@ -114,7 +114,7 @@ class_name PlatformerController2D
 ##Animations must be named "roll" all lowercase as the check box says
 @export var roll: bool
 
-
+@onready var Audio_smallBubbles = $Audio_smallBubbles
 
 #Variables determined by the developer set ones.
 var appliedGravity: float
@@ -670,4 +670,5 @@ func _placeHolder():
 
 func bubbles():
 	print("bubbleOutSound!")
+	Audio_smallBubbles.play()
 	$my_GPUParticles2D.restart()

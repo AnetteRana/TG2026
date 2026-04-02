@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7y00p2pfx5dt"
+path="res://.godot/imported/Water, Underwater, Bubbles, Bubble, Deep, Tonal, Weird SND12423 5.wav-db8d95bc94b4462dcb8862b954dfa449.sample"
+
+[deps]
+
+source_file="res://Audio/rawFiles/Water, Underwater, Bubbles, Bubble, Deep, Tonal, Weird SND12423 5.wav"
+dest_files=["res://.godot/imported/Water, Underwater, Bubbles, Bubble, Deep, Tonal, Weird SND12423 5.wav-db8d95bc94b4462dcb8862b954dfa449.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
