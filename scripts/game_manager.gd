@@ -2,8 +2,9 @@ extends Node2D
 
 var oxygen : int = 100
 var countdownOxyLoss : float = 0
-var secondsBeforeOxygenLoss : float = 3
-var oxygenLossedPerTime : int = 10
+@export var secondsBeforeOxygenLoss : float = 3
+@export var oxygenLossedPerTime : int = 15
+var alive:= true
 var myPlayer : PlatformerController2D
 
 # Called when the node enters the scene tree for the first time.
@@ -16,19 +17,22 @@ func _process(_delta: float) -> void:
 	depleteOxyOverTime()
 
 	if oxygen <= 0:
-		restart_level()
+		died()
 		
 		
-func restart_level():
-	pass#get_tree().restart_curret_scene
+func died():
+	if alive:
+		alive = false
+		get_tree().change_scene_to_file("res://scenes/Level_died.tscn")
 
 func depleteOxyOverTime():
-	countdownOxyLoss += get_process_delta_time()
-	if countdownOxyLoss >= secondsBeforeOxygenLoss:
-		countdownOxyLoss = 0.0
-		oxygen -= oxygenLossedPerTime
-		#spawnPlayerBubbles
-		myPlayer.bubbles()
+	if alive:
+		countdownOxyLoss += get_process_delta_time()
+		if countdownOxyLoss >= secondsBeforeOxygenLoss:
+			countdownOxyLoss = 0.0
+			oxygen -= oxygenLossedPerTime
+			#spawnPlayerBubbles
+			myPlayer.bubbles(oxygenLossedPerTime)
 
 func depleteOxyExtra(oxyLoss: int):
 	oxygen -= oxyLoss

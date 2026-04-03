@@ -26,4 +26,5 @@ offset_right = 164.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "mhvhjgdxgfjcødfljg lfdhjg dkøjdfhg kdfsh g"
+text = "- oxygen -"
+horizontal_alignment = 1

@@ -30,11 +30,16 @@ shape = SubResource("CapsuleShape2D_4ntmi")
 script = ExtResource("3_fhl08")
 
 [node name="MyUi" parent="Camera2D" unique_id=1594898919 instance=ExtResource("3_btcbx")]
+z_index = 1
+texture_filter = 1
 offset_top = -55.0
 offset_bottom = -55.0
 
 [node name="my_GPUParticles2D" parent="." unique_id=1439865621 instance=ExtResource("4_gwnis")]
 position = Vector2(9, -52)
+amount = 2
+lifetime = 9.75
+explosiveness = 1.0
 
 [node name="Audio_smallBubbles" type="AudioStreamPlayer2D" parent="." unique_id=978976911]
 stream = ExtResource("5_k53q1")

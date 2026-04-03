@@ -5,8 +5,10 @@ extends Control
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	$Label.text = str(GameManager.oxygen)
-	pass
+	if GameManager.alive:
+		$Label.text = str(GameManager.oxygen)
+		pass
+	else:
+		$Label.text = ":("

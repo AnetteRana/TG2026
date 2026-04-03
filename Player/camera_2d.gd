@@ -14,4 +14,4 @@ func _process(delta):
 		offset = Vector2.ZERO
 
 func shake(amount: float):
-	shake_strength = amount
+	shake_strength = amount * 2

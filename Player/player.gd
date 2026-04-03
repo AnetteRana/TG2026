@@ -685,6 +685,7 @@ func _endGroundPound():
 func _placeHolder():
 	print("")
 
-func bubbles():
+func bubbles(numb: int):
 	Audio_smallBubbles.play()
+	$my_GPUParticles2D.amount = numb +1
 	$my_GPUParticles2D.restart()
