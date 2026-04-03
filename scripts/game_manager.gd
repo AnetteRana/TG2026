@@ -2,6 +2,8 @@ extends Node2D
 
 var oxygen : int = 100
 var countdownOxyLoss : float = 0
+var secondsBeforeOxygenLoss : float = 6
+var oxygenLossedPerTime : int = 5
 var myPlayer : PlatformerController2D
 
 # Called when the node enters the scene tree for the first time.
@@ -10,7 +12,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	depleteOxy()
 
 	if oxygen <= 0:
@@ -22,8 +24,8 @@ func restart_level():
 
 func depleteOxy():
 	countdownOxyLoss += get_process_delta_time()
-	if countdownOxyLoss >= 5.0:
+	if countdownOxyLoss >= secondsBeforeOxygenLoss:
 		countdownOxyLoss = 0.0
-		oxygen -= 1
+		oxygen -= oxygenLossedPerTime
 		#spawnPlayerBubbles
 		myPlayer.bubbles()
