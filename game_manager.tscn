@@ -4,3 +4,4 @@
 
 [node name="GameManager" type="Node2D" unique_id=745230425]
 script = ExtResource("1_70yv6")
+secondsBeforeOxygenLoss = 1.0

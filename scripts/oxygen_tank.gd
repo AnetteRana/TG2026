@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var bubble_effect : GPUParticles2D
-@onready var audio = $AudioStreamPlayer2D
+@onready var tank_audio = $AudioStreamPlayer2D
 
 @onready var oxygen : int = 33
 
@@ -18,6 +18,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		bubble_effect.restart()
 		$Sprite2D.frame = 1
-		audio.play()
+		tank_audio.play()
 		GameManager.addOxy(oxygen)
+		print(tank_audio)
+		print(tank_audio.stream)
 	

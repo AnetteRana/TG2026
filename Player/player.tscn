@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://vtb2ng15tp10" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="SpriteFrames" uid="uid://c55bmo0axxw62" path="res://sprite_images/player_sprite_frames_2.tres" id="2_4ntmi"]
 [ext_resource type="PackedScene" uid="uid://8h40qs6xsq64" path="res://scenes/myUI.tscn" id="3_btcbx"]
+[ext_resource type="Script" uid="uid://djeny5ot6xep1" path="res://Player/camera_2d.gd" id="3_fhl08"]
 [ext_resource type="PackedScene" uid="uid://boanplcevp636" path="res://scenes/particle_bubbles.tscn" id="4_gwnis"]
 [ext_resource type="AudioStream" uid="uid://cb6jbcex3avq" path="res://Audio/rawFiles/Water, Bubbles, Bubbling, Small 01 SND31466 1.wav" id="5_k53q1"]
 
@@ -26,13 +27,19 @@ animation = &"idle"
 shape = SubResource("CapsuleShape2D_4ntmi")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=641027885]
+script = ExtResource("3_fhl08")
 
 [node name="MyUi" parent="Camera2D" unique_id=1594898919 instance=ExtResource("3_btcbx")]
+z_index = 1
+texture_filter = 1
 offset_top = -55.0
 offset_bottom = -55.0
 
 [node name="my_GPUParticles2D" parent="." unique_id=1439865621 instance=ExtResource("4_gwnis")]
 position = Vector2(9, -52)
+amount = 2
+lifetime = 9.75
+explosiveness = 1.0
 
 [node name="Audio_smallBubbles" type="AudioStreamPlayer2D" parent="." unique_id=978976911]
 stream = ExtResource("5_k53q1")
