@@ -3,6 +3,8 @@ extends Node2D
 @onready var bubble_effect : GPUParticles2D
 @onready var audio = $AudioStreamPlayer2D
 
+@onready var oxygen : int = 33
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	bubble_effect = $tanks_ParticleBubbles
@@ -17,4 +19,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		bubble_effect.restart()
 		$Sprite2D.frame = 1
 		audio.play()
+		GameManager.addOxy(oxygen)
 	
