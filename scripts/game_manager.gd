@@ -1,9 +1,11 @@
 extends Node2D
 
-var oxygen : int = 100
+var oxygen : int = 50
 var countdownOxyLoss : float = 0
-@export var secondsBeforeOxygenLoss : float = 3
-@export var oxygenLossedPerTime : int = 15
+var countdownBubbles : float = 0
+@export var secondsBeforeOxygenLoss : float = 0.5
+@export var secondsBetweenBreathEffect : float = 0.5
+@export var oxygenLossedPerTime : int = 1
 var alive:= true
 var myPlayer : PlatformerController2D
 
@@ -15,6 +17,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	depleteOxyOverTime()
+	releaseBubbles()
 
 	if oxygen <= 0:
 		died()
@@ -31,6 +34,12 @@ func depleteOxyOverTime():
 		if countdownOxyLoss >= secondsBeforeOxygenLoss:
 			countdownOxyLoss = 0.0
 			oxygen -= oxygenLossedPerTime
+			
+func releaseBubbles():
+	if alive:
+		countdownBubbles += get_process_delta_time()
+		if countdownBubbles >= secondsBetweenBreathEffect:
+			countdownBubbles = 0.0
 			#spawnPlayerBubbles
 			myPlayer.bubbles(oxygenLossedPerTime)
 

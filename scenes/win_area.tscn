@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dh5sx63ndqxjh"]
+
+[ext_resource type="Script" uid="uid://cx35xark0oy47" path="res://scripts/win_area.gd" id="1_lc7x4"]
+[ext_resource type="Texture2D" uid="uid://bnr6ed51ubgi3" path="res://sprite_images/4waterdrops16.png" id="1_wkndv"]
+[ext_resource type="AudioStream" uid="uid://c3lmxsf6yrbg1" path="res://Audio/Voices, Child, Yay, Group Yelling, Happy, Meme Redesign SND140169 1.wav" id="2_32vr6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc7x4"]
+size = Vector2(128, 128)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_32vr6"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wkndv"]
+particle_flag_disable_z = true
+inherit_velocity_ratio = 300.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_max = 831.36
+gravity = Vector3(0, 500, 0)
+hue_variation_min = -1.0
+hue_variation_max = 0.7
+
+[node name="WinArea" type="Node2D" unique_id=432338122]
+script = ExtResource("1_lc7x4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=311806527]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=30505892]
+shape = SubResource("RectangleShape2D_lc7x4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=991255920]
+stream = ExtResource("2_32vr6")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1948883022]
+z_index = 1
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_32vr6")
+emitting = false
+amount = 100
+texture = ExtResource("1_wkndv")
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_wkndv")
